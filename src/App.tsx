@@ -22,6 +22,11 @@ function App() {
     localStorage.setItem('my_transactions', JSON.stringify(transactions));
   }, [transactions]);
 
+  const deleteItem = (id) => {
+    const filteredTransactions = transactions.filter(item => item.id != id);
+    setTransactions(filteredTransactions);
+  }
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !amount) return;
@@ -75,6 +80,12 @@ function App() {
         {transactions.map((item) => (
           <li key={item.id}>
             {item.name} — {item.amount} ₽ ({item.category})
+            <div className="tooltip-wrapper">
+              <button className="delete-btn" onClick={() => deleteItem(item.id)}>
+                &times;
+              </button>
+              <span className="tooltip-text">Удалить</span>
+            </div>
           </li>
         ))}
       </ul>
