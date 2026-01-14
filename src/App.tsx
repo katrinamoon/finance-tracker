@@ -127,16 +127,16 @@ function App() {
               </li>
             ))}
         </ul>
+        <button className="clear-btn" onClick={clearAll}>
+          Очистить список транзакций
+        </button>
         <p>
           <strong>
             {type === "income" ? "Сумма доходов: " : "Сумма расходов: "}
           </strong>
-          <span>{type === 'income' ? totalIncome : totalExpenses}</span>
+          <span>{type === "income" ? totalIncome : totalExpenses}</span>
           <span> ₽</span>
         </p>
-        <button className="clear-btn" onClick={clearAll}>
-          Очистить список транзакций
-        </button>
       </form>
       <p>
         <strong>Баланс:</strong> {balance} ₽
