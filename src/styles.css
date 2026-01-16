@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Helvetica, Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
   display: flex;
   justify-content: center;
@@ -47,21 +47,26 @@ form {
 
 .type-toggle {
   display: flex;
-  gap: 10px;
+  gap: 0px;
+  border: 2px solid #c171ed;
+  margin-bottom: 10px;
+  border-radius: 19px;
 }
 
 .type-toggle button {
   flex: 1;
   padding: 8px 0px;
-  margin-bottom: 10px;
   border: none;
-  border-radius: 8px;
+  border-radius: 16px;
   cursor: pointer;
   font-weight: 600;
+  background-color: white;
+  color: black;
+  transition: background-color 0.1s ease, color 0.1s ease;
 }
 
-.active-income,
-.active-expenses {
+.type-toggle button.active-income,
+.type-toggle button.active-expenses {
   background-color: #c171ed;
   color: white;
 }
